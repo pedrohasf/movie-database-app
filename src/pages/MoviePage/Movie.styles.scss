@@ -1,0 +1,22 @@
+.movie-backdrop{
+    z-index: -1;
+  }
+  .position-fixed{
+    position: fixed;
+  }
+  .fixed-top{
+    top:0;
+    right:0;
+    left:0
+  }
+  .container {
+    padding: 15px;
+    margin: 0 10%;
+  }
+  .poster-img{
+    width: 30%;
+    height: 30%;
+  }
+  .checked{
+    color: orange
+  }
