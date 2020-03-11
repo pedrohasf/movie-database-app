@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { auth } from '../../firebase/firebase.utils'
 import SearchBox from '../SearchBox/SearchBox.component'
 import { withRouter} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
+import { selectCurrentUser} from '../../redux/user/user.selectors'
 import './Header.styles.scss'
 
 class Header extends React.Component{
@@ -29,4 +32,9 @@ class Header extends React.Component{
         )
     }
 }
-export default withRouter(Header)
+
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+})
+
+export default withRouter(connect(mapStateToProps)(Header))

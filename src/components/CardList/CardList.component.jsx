@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Card from '../Card/Card.component';
 import GENRES_DATA from '../../data/Genres.data'
 
@@ -23,13 +23,13 @@ class CardList extends React.Component {
     render(){
         const { object } = this.props
         return(
-            <Fragment>
+            <div className='tc'>
               {object?object.map((movie, i)=>{
                     return(
                         <Card key={i} info={movie} genres={this.getGenres(i)} />
                     )
                 }):''}
-            </Fragment>
+            </div>
         )
     }
 }
