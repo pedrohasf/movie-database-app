@@ -9,8 +9,7 @@ class Upcoming extends React.Component {
         super(props)
         this.state = {
           info: [],
-          page: 1,
-          searchField: ''
+          page: 1
         }
       }
       nextPage = async()=>{
