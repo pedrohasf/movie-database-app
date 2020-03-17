@@ -1,13 +1,13 @@
 import React from 'react'
 import SignIn from '../../components/SignIn/SignIn.component'
 import SignUp from '../../components/signUp/SignUp.component'
-import './SignInAndSignUp.styles.scss'
+import {SignInAndSignUpPageContainer} from './SignInAndSignUp.styles.jsx'
 
 const SignInAndSignUpPage = () =>(
-    <div className='pa3 signInAndSignUp'>
+    <SignInAndSignUpPageContainer>
         <SignIn />
         <SignUp />
-    </div>
+    </SignInAndSignUpPageContainer>
 )
 
 export default SignInAndSignUpPage

@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import CardList from '../../components/CardList/CardList.component.jsx'
 import ButtonCategories from '../../components/ButtonCategories/ButtonCategories.component';
-import './Upcoming.styles.scss'
+import {UpcomingContainer, UpcomingTitle, LoadMoreButton} from './Upcoming.styles.jsx'
+import FallBackPage from '../FallBackPage/FallBackPage.component.jsx';
 
 
 class Upcoming extends React.Component {
@@ -45,11 +46,12 @@ class Upcoming extends React.Component {
       }
       render(){
         return (
-          <Fragment>{this.state.info.length>0?<div className='mt5'>
+          <Fragment>{this.state.info.length>0?<UpcomingContainer>
             <ButtonCategories category='Upcoming'/>
-          <h1 className='tc f1'>Upcoming Movies</h1>
+          <UpcomingTitle>Upcoming Movies</UpcomingTitle>
             <CardList object={this.state.info} />
-            <button className='btn load-more-btn' onClick={this.nextPage}>Load More!</button></div>:<div className='mt5 vh-100'><ButtonCategories /></div>}</Fragment>
+            <LoadMoreButton onClick={this.nextPage}>Load More!</LoadMoreButton></UpcomingContainer>:
+            <FallBackPage />}</Fragment>
       );
     }
 }

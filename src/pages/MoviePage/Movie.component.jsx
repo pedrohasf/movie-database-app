@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import ActorList from '../../components/ActorList/ActorList.component';
 import CardList from '../../components/CardList/CardList.component.jsx'
-import './Movie.styles.scss'
+import {MoviePageContainer, MoviePageBackdrop, MovieInfoContainer, MovieAdditionalInfoContainer, MovieActorsContainer, MovieSectionTitle, MoviePosterImg, MovieTextInfoContainer, MovieTagline, MovieInfoParagraph, RatingContainer, RatingStarIcon, RatingInfo} from './Movie.styles.jsx'
 
 
 class Movie extends React.Component{
@@ -60,32 +60,32 @@ class Movie extends React.Component{
         const {info, actors, director} = this.state
         return (
           <Fragment>{info.title?<Fragment>
-          <div className='mt6 mb5'>
-            <div className='movie-backdrop w-100 h-100 position-fixed fixed-top' style={{backgroundSize: 'cover', backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://image.tmdb.org/t/p/w1280/${info['backdrop_path']}')`}} />
-                <div className='flex flex-row container bg-black-60 near-white'>
-                <img className='poster-img' alt={`poster ${info.title}`} src={info['poster_path']?`https://image.tmdb.org/t/p/w780${info['poster_path']}`:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTb481OSt5pyxs0sDiBLtbJSYBqQDFijRlhf74kfk4Wtz5Qo5-z'} />
-                  <div className='flex flex-column ma3'>
-                  <h2 className='yellow f2'>{info.title}</h2>
-                  <h4 className='f3'>{info.tagline}</h4>
-                  <p className='f4'>{info.overview}</p>
-                  <p className='f4'>Genres: {info.genres?info.genres.map((genre)=>{
+          <MoviePageContainer>
+            <MoviePageBackdrop style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://image.tmdb.org/t/p/w1280/${info['backdrop_path']}')`}} />
+                <MovieInfoContainer>
+                <MoviePosterImg title={info['title']} url={info['poster_path']} />
+                  <MovieTextInfoContainer>
+                  <MovieSectionTitle>{info.title}</MovieSectionTitle>
+                  <MovieTagline>{info.tagline}</MovieTagline>
+                  <MovieInfoParagraph>{info.overview}</MovieInfoParagraph>
+                  <MovieInfoParagraph>Genres: {info.genres?info.genres.map((genre)=>{
                     return genre['name']
-                  }).join(', '):''}</p>
-                  <div className='flex flex-row'><span className="fa fa-star checked f1" /><p className='ma3 f3'>{info['vote_average']?info['vote_average']+'/10':'Rating not found'}</p></div>
-                  <p className='f4'>Director: {director?director:''}</p>
-                </div></div>
-                <div className='bg-black container near-white f4'>
-                  <p>Release date: {this.ReleaseDate()}</p>
-                <p>Runtime: {Math.floor(info['runtime']/60)}h {info['runtime']%60}min</p>
-                  <p>Budget: {this.Budget()}</p>
-                </div>
-                <div className='tc container black bg-white'>
-                  <h2 className='f2 yellow'>Actors</h2>
+                  }).join(', '):''}</MovieInfoParagraph>
+                  <RatingContainer><RatingStarIcon /><RatingInfo>{info['vote_average']?info['vote_average']+'/10':'Rating not found'}</RatingInfo></RatingContainer>
+                  <MovieInfoParagraph>Director: {director?director:''}</MovieInfoParagraph>
+                </MovieTextInfoContainer></MovieInfoContainer>
+                <MovieAdditionalInfoContainer>
+                  <MovieInfoParagraph>Release date: {this.ReleaseDate()}</MovieInfoParagraph>
+                <MovieInfoParagraph>Runtime: {Math.floor(info['runtime']/60)}h {info['runtime']%60}min</MovieInfoParagraph>
+                  <MovieInfoParagraph>Budget: {this.Budget()}</MovieInfoParagraph>
+                </MovieAdditionalInfoContainer>
+                <MovieActorsContainer>
+                  <MovieSectionTitle>Actors</MovieSectionTitle>
                   {actors.length>0?<ActorList object={actors} />:'No actors found'}
-                  <h2 className='f2 yellow'>Recommendations</h2>
+                  <MovieSectionTitle>Recommendations</MovieSectionTitle>
                   {this.state.recommendations.length>0?<CardList object={this.state.recommendations}/>:'No recommendations found'}
-                </div>
-            </div>
+                </MovieActorsContainer>
+            </MoviePageContainer>
             </Fragment>:''
     }</Fragment>
         )

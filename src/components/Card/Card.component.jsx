@@ -1,15 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import './Card.styles.scss'
+import {CardContainer, CardImg, CardTitle, CardGenres, CardStar, CardRating} from './Card.styles.jsx'
 
 const Card =({ info, genres })=>{
         return (
-            <Link to={`/movie/${info['id']}`} className='tc grow bg-light-silver br3 pa3 ma2 dib shadow-5 pointer w15' target='_blank'>
-                <img  className='card-img' alt={`poster ${info['title']}`} src={info['poster_path']?`https://image.tmdb.org/t/p/w200${info['poster_path']}`:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTb481OSt5pyxs0sDiBLtbJSYBqQDFijRlhf74kfk4Wtz5Qo5-z'} />
-                <h4>{info['title']||info['original_name']}</h4>
-                <p>{genres.length>0?genres.join(', '):'Genres not found'}</p>
-                <span className="fa fa-star checked f3" /><p>{info['vote_average']?info['vote_average']+'/10':'Rating not found'}</p>
-            </Link>
+            <CardContainer to={`/movie/${info['id']}`} target='_blank'>
+                <CardImg info={info} />
+                <CardTitle>{info['title']||info['original_name']}</CardTitle>
+                <CardGenres>{genres?genres.length>0?genres.join(', '):'Genres not found':''}</CardGenres>
+                <CardStar /><CardRating>{info['vote_average']?info['vote_average']+'/10':'Rating not found'}</CardRating>
+            </CardContainer>
         )
     }
 

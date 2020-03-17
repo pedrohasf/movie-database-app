@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import CardList from '../../components/CardList/CardList.component.jsx'
 import ButtonCategories from '../../components/ButtonCategories/ButtonCategories.component';
-import './HomePage.styles.scss'
+import {HomePageContainer, HomePageTitle, LoadMoreButton} from  './HomePage.styles.jsx'
+import FallBackPage from '../FallBackPage/FallBackPage.component'
 
 class HomePage extends React.Component {
     constructor(props){
@@ -31,11 +32,13 @@ class HomePage extends React.Component {
       }
       render(){
         return (
-          <Fragment>{this.state.info.length>0?<div className='mt5'>
+          <Fragment>{this.state.info.length>0?<HomePageContainer>
             <ButtonCategories category='Popular'/>
-          <h1 className='tc f1'>Popular Movies</h1>
+          <HomePageTitle>Popular Movies</HomePageTitle>
             <CardList object={this.state.info} />
-            <button className='btn load-more-btn' onClick={this.nextPage}>Load More!</button></div>:<div className='mt5 vh-100'><ButtonCategories /></div>}</Fragment>
+            <LoadMoreButton onClick={this.nextPage}>Load More</LoadMoreButton>
+            </HomePageContainer>:
+            <FallBackPage />}</Fragment>
       );
     }
 }

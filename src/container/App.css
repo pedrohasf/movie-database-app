@@ -12,9 +12,6 @@ body{
   background-repeat: no-repeat;
   height: 100%;
 }
-.witching-hour{
-  background-image: linear-gradient(to right,   #81081c , #240b36);
-}
  h1{
   color: rgb(218, 11, 11);
 }

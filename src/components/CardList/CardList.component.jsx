@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card.component';
 import GENRES_DATA from '../../data/Genres.data'
+import { CardListContainer } from './CardList.styles'
 
 class CardList extends React.Component {
     getGenres=(index)=>{
@@ -23,13 +24,13 @@ class CardList extends React.Component {
     render(){
         const { object } = this.props
         return(
-            <div className='tc'>
+            <CardListContainer>
               {object?object.map((movie, i)=>{
                     return(
                         <Card key={i} info={movie} genres={this.getGenres(i)} />
                     )
                 }):''}
-            </div>
+            </CardListContainer>
         )
     }
 }
