@@ -1,5 +1,5 @@
-import styled, {css} from 'styled-components'
-import { Link } from 'react-router-dom'
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 const baseButtonStyles = css`
 color: #dee2e6;
@@ -21,22 +21,28 @@ margin-top: 6%;
 `;
 
 export const ButtonCategoriesGroup = styled.div.attrs({
-    className: 'btn-group flex justify-center'
-})``
+  className: "btn-group flex justify-center",
+})``;
 
 export const ButtonCategoryPopular = styled(Link)`
-    ${baseButtonStyles}
-    ${props => props.category==='Popular'?'background-color: rgb(218, 11, 11);':''}
-`
+  ${baseButtonStyles}
+  ${(props) =>
+    props.category === "Popular" ? "background-color: rgb(218, 11, 11);" : ""}
+`;
 export const ButtonCategoryUpcoming = styled(Link)`
-    ${baseButtonStyles}
-    ${props => props.category==='Upcoming'?'background-color: rgb(218, 11, 11);':''}
-`
+  ${baseButtonStyles}
+  ${(props) =>
+    props.category === "Upcoming" ? "background-color: rgb(218, 11, 11);" : ""}
+`;
 export const ButtonCategoryTopRated = styled(Link)`
-    ${baseButtonStyles}
-    ${props => props.category==='TopRated'?'background-color: rgb(218, 11, 11);':''}
-`
+  ${baseButtonStyles}
+  ${(props) =>
+    props.category === "TopRated" ? "background-color: rgb(218, 11, 11);" : ""}
+`;
 export const ButtonCategoryNowPlaying = styled(Link)`
-    ${baseButtonStyles}
-    ${props => props.category==='NowPlaying'?'background-color: rgb(218, 11, 11);':''}
-`
+  ${baseButtonStyles}
+  ${(props) =>
+    props.category === "NowPlaying"
+      ? "background-color: rgb(218, 11, 11);"
+      : ""}
+`;

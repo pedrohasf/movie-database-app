@@ -1,12 +1,11 @@
-import React from 'react'
-import ButtonCategories from '../../components/ButtonCategories/ButtonCategories.component';
-import {FallBackPageContainer} from './FallBackPage.styles'
-
+import React from "react";
+import ButtonCategories from "../../components/ButtonCategories/ButtonCategories.component";
+import { FallBackPageContainer } from "./FallBackPage.styles";
 
 const FallBackPage = () => (
-    <FallBackPageContainer>
+  <FallBackPageContainer>
     <ButtonCategories />
-    </FallBackPageContainer>
-)
+  </FallBackPageContainer>
+);
 
-export default FallBackPage
+export default FallBackPage;

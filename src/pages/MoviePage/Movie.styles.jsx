@@ -1,75 +1,81 @@
-import styled, {css} from 'styled-components'
+import styled, { css } from "styled-components";
 
 const container = css`
-    padding: 15px;
-    margin: 0 10%;
-`
+  padding: 15px;
+  margin: 0 10%;
+`;
 
 export const MoviePageContainer = styled.div.attrs({
-    className: 'mt6 mb5',
-})``
+  className: "mt-20 mb-16",
+})``;
 
 export const MoviePageBackdrop = styled.div.attrs({
-    className: 'w-100 h-100 fixed top-0'
+  className: "w-full h-full fixed top-0",
 })`
     z-index: -1;
     background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://image.tmdb.org/t/p/w1280${props => props.url}}');
-`
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://image.tmdb.org/t/p/w1280${(
+      props
+    ) => props.url}}');
+`;
 
 export const MovieInfoContainer = styled.div.attrs({
-    className: 'flex flex-row bg-black-60 near-white'
+  className: "flex flex-row",
 })`
-    ${container}
-`
+  color: #f4f4f4;
+  background-color: rgba(0, 0, 0, 0.6);
+  ${container}
+`;
 
 export const MovieAdditionalInfoContainer = styled.div.attrs({
-    className: 'bg-black near-white f4'
+  className: "bg-black text-xl",
 })`
-    ${container}
-`
+  color: #f4f4f4;
+  ${container}
+`;
 
 export const MovieActorsContainer = styled.div.attrs({
-    className: 'tc black bg-white'
+  className: "text-center text-black bg-white",
 })`
-    ${container}
-`
+  ${container}
+`;
 
 export const MovieSectionTitle = styled.h2.attrs({
-    className: 'yellow f2'
-})``
+  className: "text-yellow-600 text-5xl font-semibold",
+})``;
 
-export const MoviePosterImg = styled.img.attrs(({title, url })=>({
-    alt: 'Poster ' + title,
-    src: url?`https://image.tmdb.org/t/p/w780${url}`:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTb481OSt5pyxs0sDiBLtbJSYBqQDFijRlhf74kfk4Wtz5Qo5-z',
-
+export const MoviePosterImg = styled.img.attrs(({ title, url }) => ({
+  alt: "Poster " + title,
+  src: url
+    ? `https://image.tmdb.org/t/p/w780${url}`
+    : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTb481OSt5pyxs0sDiBLtbJSYBqQDFijRlhf74kfk4Wtz5Qo5-z",
 }))`
-    width: 30%;
-    height: 30%;
-`
+  width: 30%;
+  height: 30%;
+`;
 
 export const MovieTextInfoContainer = styled.div.attrs({
-    className: 'flex flex-column ma3',
-})``
+  className: "flex flex-col m-3",
+})``;
 
 export const MovieTagline = styled.h4.attrs({
-    className: 'f3',
-})``
+  className: "text-2xl",
+})``;
 
 export const MovieInfoParagraph = styled.p.attrs({
-    className: 'f4',
-})``
+  className: "text-xl",
+})``;
 
 export const RatingContainer = styled.div.attrs({
-    className: 'flex flex-row',
-})``
+  className: "flex flex-row",
+})``;
 
 export const RatingStarIcon = styled.span.attrs({
-    className: 'fa fa-star f1',
+  className: "fa fa-star text-6xl",
 })`
-    color: orange
-`
+  color: orange;
+`;
 
 export const RatingInfo = styled.p.attrs({
-    className: 'ma3 f3',
-})``
+  className: "m-3 text-4xl",
+})``;

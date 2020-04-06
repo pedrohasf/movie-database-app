@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.1.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
     "@testing-library/user-event": "^7.2.1",
+    "autoprefixer": "^9.7.5",
     "firebase": "^7.9.3",
-    "node-sass": "^4.13.1",
+    "postcss-cli": "^7.1.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
@@ -15,15 +17,18 @@
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
+    "redux-saga": "^1.1.3",
     "reselect": "^4.0.0",
     "styled-components": "^5.0.1",
-    "tachyons": "^4.11.1"
+    "tailwindcss": "^1.2.0"
   },
   "scripts": {
+    "start:tw": "postcss ./src/tailwind.css -o ./src/styles.css -w",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build:tw": "postcss ./src/tailwind.css -o ./src/styles.css --env production"
   },
   "eslintConfig": {
     "extends": "react-app"

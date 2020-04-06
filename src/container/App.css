@@ -1,20 +1,20 @@
-a{
+a {
   text-decoration: none;
-  color: black
+  color: black;
 }
-li{
+li {
   list-style: none;
 }
-body{
-  background-image: linear-gradient(to top,   #81081c , #240b36);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  background-image: linear-gradient(to top, #81081c, #240b36);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(255, 193, 7);
   background-repeat: no-repeat;
   height: 100%;
 }
- h1{
+h1 {
   color: rgb(218, 11, 11);
 }
-*{
+* {
   box-sizing: border-box;
 }

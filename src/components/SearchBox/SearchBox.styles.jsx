@@ -1,20 +1,21 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const SearchBoxContainer = styled.form.attrs({
-    className: 'pa2',
-})``
+  className: "p-2",
+})``;
 
 export const SearchBoxInput = styled.input.attrs({
-    className: 'pa3 ba b--black bg-light-yellow',
-    type: 'search',
-    placeholder: 'search by movie title',
-})``
+  className:
+    "p-3 border border-black bg-yellow-300 text-black placeholder-black",
+  type: "search",
+  placeholder: "search by movie title",
+})``;
 
 export const SearchBoxButton = styled.button.attrs({
-    type:'submit',
-    className: 'ba b--black bg-yellow pointer tc pa3',
-})``
+  type: "submit",
+  className: "border border-black bg-yellow-500 cursor-pointer text-center p-3",
+})``;
 
 export const SearchBoxSubmitIcon = styled.i.attrs({
-    className: "fa fa-search",
-})``
+  className: "fa fa-search text-black",
+})``;
