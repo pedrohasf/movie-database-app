@@ -1,6 +1,5 @@
 import React from "react";
 import { auth } from "../../firebase/firebase.utils";
-import SearchBox from "../SearchBox/SearchBox.component";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -11,6 +10,8 @@ import {
   HeaderLogoIcon,
   LogOutContainer,
   LogInLink,
+  HeaderSpan,
+  SearchBoxStyled,
 } from "./Header.styles.jsx";
 
 class Header extends React.Component {
@@ -31,9 +32,10 @@ class Header extends React.Component {
     return (
       <HeaderNav>
         <HeaderLogoLink to={"/"}>
-          <HeaderLogoIcon className="fas fa-video"></HeaderLogoIcon> Movie App
+          <HeaderLogoIcon className="fas fa-video text-4xl"></HeaderLogoIcon>{" "}
+          <HeaderSpan>Movie App</HeaderSpan>
         </HeaderLogoLink>
-        <SearchBox
+        <SearchBoxStyled
           searchChange={this.onSearchChange}
           onSubmit={
             this.state.searchField.length > 0 ? this.onSubmit : () => {}

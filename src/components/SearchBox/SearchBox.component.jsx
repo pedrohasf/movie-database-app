@@ -3,14 +3,16 @@ import {
   SearchBoxContainer,
   SearchBoxInput,
   SearchBoxButton,
-  SearchBoxSubmitIcon
+  SearchBoxSubmitIcon,
+  SearchBoxLabel,
 } from "./SearchBox.styles";
 
 const SearchBox = ({ searchChange, onSubmit }) => {
   return (
     <SearchBoxContainer onSubmit={onSubmit}>
-      <SearchBoxInput onChange={searchChange} />
-      <SearchBoxButton>
+      <SearchBoxLabel for="search">Search by movie title</SearchBoxLabel>
+      <SearchBoxInput id="search" onChange={searchChange} />
+      <SearchBoxButton aria-label="Search">
         <SearchBoxSubmitIcon />
       </SearchBoxButton>
     </SearchBoxContainer>

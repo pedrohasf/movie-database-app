@@ -4,7 +4,7 @@ import SignUp from "../../components/signUp/SignUp.component";
 import { SignInAndSignUpPageContainer } from "./SignInAndSignUp.styles.jsx";
 
 const SignInAndSignUpPage = () => (
-  <SignInAndSignUpPageContainer>
+  <SignInAndSignUpPageContainer className="flex-col flex-row">
     <SignIn />
     <SignUp />
   </SignInAndSignUpPageContainer>

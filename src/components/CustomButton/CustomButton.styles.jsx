@@ -31,6 +31,9 @@ const googleSignInStyles = css`
     background-color: #357ae8;
     border: none;
   }
+  @media (max-width: 640px) {
+    margin-top: 1rem;
+  }
 `;
 
 const getButtonStyles = (props) => {

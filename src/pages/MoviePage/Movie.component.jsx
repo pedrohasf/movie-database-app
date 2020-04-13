@@ -15,6 +15,7 @@ import {
   RatingContainer,
   RatingStarIcon,
   RatingInfo,
+  DirectorRatingContainer,
 } from "./Movie.styles.jsx";
 
 class Movie extends React.Component {
@@ -99,14 +100,14 @@ class Movie extends React.Component {
                   url={info["poster_path"]}
                 />
                 <MovieTextInfoContainer>
-                  <MovieSectionTitle className="mb-1">
+                  <MovieSectionTitle className="mb-1 text-5xl">
                     {info.title}
                   </MovieSectionTitle>
                   <MovieTagline className="mb-6">{info.tagline}</MovieTagline>
                   <MovieInfoParagraph className="mb-16">
                     {info.overview}
                   </MovieInfoParagraph>
-                  <MovieInfoParagraph>
+                  <MovieInfoParagraph className="mb-6">
                     Genres:{" "}
                     {info.genres
                       ? info.genres
@@ -116,8 +117,8 @@ class Movie extends React.Component {
                           .join(", ")
                       : ""}
                   </MovieInfoParagraph>
-                  <div className="mt-auto flex">
-                    <MovieInfoParagraph className="text-3xl mt-2 ml-4">
+                  <DirectorRatingContainer className="mt-auto flex">
+                    <MovieInfoParagraph className="text-3xl mb-6">
                       Director: {director ? director : ""}
                     </MovieInfoParagraph>
                     <RatingContainer className="ml-auto">
@@ -128,7 +129,7 @@ class Movie extends React.Component {
                           : "Rating not found"}
                       </RatingInfo>
                     </RatingContainer>
-                  </div>
+                  </DirectorRatingContainer>
                 </MovieTextInfoContainer>
               </MovieInfoContainer>
               <MovieAdditionalInfoContainer>

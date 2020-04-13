@@ -3,15 +3,22 @@ import { Link } from "react-router-dom";
 
 const baseButtonStyles = css`
 color: #dee2e6;
-padding: 0.4rem 0.75rem;
+display:flex;
+align-items: center;
+padding: 0 0.75rem;
 border: 1px solid rgb(167, 39, 39);
 border-radius: 0.4rem;
 margin: 5px;
 cursor: pointer;
+height: 4rem
 }
 @media (min-width:320px)  {.btn-group{
 margin-top: 9%;
 }}
+@media (min-width:640px){
+  padding: 0.4rem 0.75rem;
+  height: auto;
+}
 @media (min-width:961px)  { .btn-group{
 margin-top: 8%;
 }}
@@ -21,7 +28,7 @@ margin-top: 6%;
 `;
 
 export const ButtonCategoriesGroup = styled.div.attrs({
-  className: "btn-group flex justify-center",
+  className: "btn-group flex justify-center items-center",
 })``;
 
 export const ButtonCategoryPopular = styled(Link)`

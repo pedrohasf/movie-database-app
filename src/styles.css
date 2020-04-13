@@ -226,6 +226,10 @@ button:-moz-focusring,
  * Add the correct display in IE 10.
  */
 
+[hidden] {
+  display: none;
+}
+
 /**
  * Manually forked from SUIT CSS Base: https://github.com/suitcss/base
  * A thin layer on top of normalize.css that provides a starting point more
@@ -475,6 +479,10 @@ img {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -540,10 +548,6 @@ img {
 
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
 }
 
 .mb-2 {
@@ -660,10 +664,6 @@ img {
 
 .capitalize {
   text-transform: capitalize;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .z-10 {

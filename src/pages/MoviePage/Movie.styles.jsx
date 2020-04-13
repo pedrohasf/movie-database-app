@@ -7,21 +7,29 @@ const container = css`
 
 export const MoviePageContainer = styled.div.attrs({
   className: "mt-20 mb-16",
-})``;
+})`
+  width: 100%;
+  margin-right: -1rem;
+  margin-left: -0.5rem;
+`;
 
 export const MoviePageBackdrop = styled.div.attrs({
-  className: "w-full h-full fixed top-0",
+  className: "h-full fixed top-0",
 })`
     z-index: -1;
     background-size: cover;
+    width: 100vw;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://image.tmdb.org/t/p/w1280${(
       props
     ) => props.url}}');
 `;
 
 export const MovieInfoContainer = styled.div.attrs({
-  className: "flex flex-row",
+  className: "flex",
 })`
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
   color: #f4f4f4;
   background-color: rgba(0, 0, 0, 0.6);
   ${container}
@@ -41,8 +49,12 @@ export const MovieActorsContainer = styled.div.attrs({
 `;
 
 export const MovieSectionTitle = styled.h2.attrs({
-  className: "text-yellow-600 text-5xl font-semibold",
-})``;
+  className: "text-yellow-600 text-3xl font-semibold",
+})`
+  @media (min-width: 640px) {
+    font-size: 3rem;
+  }
+`;
 
 export const MoviePosterImg = styled.img.attrs(({ title, url }) => ({
   alt: "Poster " + title,
@@ -52,6 +64,10 @@ export const MoviePosterImg = styled.img.attrs(({ title, url }) => ({
 }))`
   width: 30%;
   height: 30%;
+  @media (max-width: 640px) {
+    width: 80%;
+    height: 80%;
+  }
 `;
 
 export const MovieTextInfoContainer = styled.div.attrs({
@@ -68,7 +84,11 @@ export const MovieInfoParagraph = styled.p.attrs({
 
 export const RatingContainer = styled.div.attrs({
   className: "flex flex-row",
-})``;
+})`
+  @media (max-width: 640px) {
+    margin-left: 0;
+  }
+`;
 
 export const RatingStarIcon = styled.span.attrs({
   className: "fa fa-star text-6xl",
@@ -79,3 +99,9 @@ export const RatingStarIcon = styled.span.attrs({
 export const RatingInfo = styled.p.attrs({
   className: "m-3 text-4xl",
 })``;
+
+export const DirectorRatingContainer = styled.div`
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+`;
