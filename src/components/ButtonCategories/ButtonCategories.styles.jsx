@@ -5,7 +5,7 @@ const baseButtonStyles = css`
 color: #dee2e6;
 display:flex;
 align-items: center;
-padding: 0 0.75rem;
+padding: 0 0.4rem;
 border: 1px solid rgb(167, 39, 39);
 border-radius: 0.4rem;
 margin: 5px;

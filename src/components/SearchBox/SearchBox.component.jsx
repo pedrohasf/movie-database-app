@@ -10,7 +10,7 @@ import {
 const SearchBox = ({ searchChange, onSubmit }) => {
   return (
     <SearchBoxContainer onSubmit={onSubmit}>
-      <SearchBoxLabel for="search">Search by movie title</SearchBoxLabel>
+      <SearchBoxLabel htmlFor="search">Search by movie title</SearchBoxLabel>
       <SearchBoxInput id="search" onChange={searchChange} />
       <SearchBoxButton aria-label="Search">
         <SearchBoxSubmitIcon />

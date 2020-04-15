@@ -37,6 +37,11 @@ export const HeaderSpan = styled.span.attrs({
   font-size: 2.5rem;
   @media only screen and (min-width: 640px) {
     display: flex;
+    font-size: 2rem;
+  }
+  @media only screen and (min-width: 1024px) {
+    display: flex;
+    font-size: 2.5rem;
   }
 `;
 

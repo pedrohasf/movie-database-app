@@ -4,7 +4,6 @@ const buttonStyles = css`
   background-color: black;
   color: white;
   border: none;
-
   &:hover {
     background-color: white;
     color: black;
@@ -31,9 +30,7 @@ const googleSignInStyles = css`
     background-color: #357ae8;
     border: none;
   }
-  @media (max-width: 640px) {
-    margin-top: 1rem;
-  }
+  margin-top: 1rem;
 `;
 
 const getButtonStyles = (props) => {

@@ -32,7 +32,10 @@ class Header extends React.Component {
     return (
       <HeaderNav>
         <HeaderLogoLink to={"/"}>
-          <HeaderLogoIcon className="fas fa-video text-4xl"></HeaderLogoIcon>{" "}
+          <HeaderLogoIcon
+            aria-hidden="true"
+            className="fas fa-video text-4xl"
+          ></HeaderLogoIcon>{" "}
           <HeaderSpan>Movie App</HeaderSpan>
         </HeaderLogoLink>
         <SearchBoxStyled

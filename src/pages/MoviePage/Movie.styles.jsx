@@ -49,7 +49,7 @@ export const MovieActorsContainer = styled.div.attrs({
 `;
 
 export const MovieSectionTitle = styled.h2.attrs({
-  className: "text-yellow-600 text-3xl font-semibold",
+  className: "text-yellow-600 text-2xl font-semibold",
 })`
   @media (min-width: 640px) {
     font-size: 3rem;

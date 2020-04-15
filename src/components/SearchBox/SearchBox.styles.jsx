@@ -23,6 +23,9 @@ export const SearchBoxInput = styled.input.attrs({
   placeholder: "Search by movie title",
 })`
   width: 12rem;
+  @media (max-width: 640px) {
+    width: 10rem;
+  }
 `;
 
 export const SearchBoxButton = styled.button.attrs({

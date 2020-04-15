@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
 export const SignInContainer = styled.div`
-  width: 380px;
+  width: 350px;
   display: flex;
   flex-direction: column;
-  margin-left: auto;
+  @media (min-width: 640px) {
+    margin-left: auto;
+  }
+  @media (max-width: 640px) {
+    width: 310px;
+  }
 `;
 
 export const SignInTitleMessage = styled.h2`
@@ -18,7 +23,5 @@ export const SignInForm = styled.form``;
 export const SignInButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  @media (max-width: 640px) {
-    flex-direction: column;
-  }
+  flex-direction: column;
 `;
